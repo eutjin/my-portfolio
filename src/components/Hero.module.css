@@ -1,0 +1,8 @@
+.heroContainer{
+
+    background-color: pink;
+    height: 500px;
+    width: var(--content-width);
+    margin: 1rem auto;
+
+}

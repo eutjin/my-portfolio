@@ -1,0 +1,52 @@
+.navbarContainer{
+    height: var(--navbar-height);
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.navbarContents{
+    display: flex;
+    justify-content: space-between;
+    width: var(--content-width);
+    padding: 0 1rem;
+    
+}
+.navbarRight{
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+    align-items: center;
+}
+.navbarLeft{
+    display: flex;
+    gap: 2rem;
+    font-size: 1rem;
+    align-items: center;
+}
+.navbarResume{
+    background-color: rgb(44, 44, 44);
+    color: white;
+    padding: 0.5rem 2rem;
+}
+
+.navbarHamburger{
+    display: none;
+}
+
+@media (max-width: 800px){
+    .navbarHamburger{
+        display: block;
+    }
+    .navbarRight{
+        display: none;
+    }
+}

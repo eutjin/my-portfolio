@@ -27,7 +27,7 @@ position: absolute;
 .menuContainer{
   width: 65%;
   height: 100%;
-  background-color: red;
+  background-color: rgb(255, 255, 255);
   
 }
 .menuContainerTop{

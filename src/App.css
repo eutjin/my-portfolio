@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap');
 /* .contentContainer{
 position: absolute;
 
@@ -18,10 +18,14 @@ position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  position: relative;
+  position: fixed;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: flex-end;
+  top: 0;
+}
+.hidden{
+  display: none;
 }
 
 .menuContainer{
@@ -29,10 +33,40 @@ position: absolute;
   height: 100%;
   background-color: rgb(255, 255, 255);
   
+  
+
+  animation-name: menumove;
+  animation-duration: 0.2s;
+  animation-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+
+@keyframes menumove{
+  0% {transform: translateX(200px); opacity: 0;}
+  
+  100% {transform: translateX(0px); opacity: 1;}
+}
+.menuContainerOff{
+  width: 65%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(100px);
+  transition: all 5000ms;
+  opacity: 0;
 }
 .menuContainerTop{
   height: var(--navbar-height);
   padding: 1rem;
   display: flex;
   justify-content: flex-end;
+}
+
+.menuContainerContent{
+padding: 1rem;
+}
+
+.menuContainerItem{
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
 }

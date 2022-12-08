@@ -37,6 +37,11 @@
     color: white;
     padding: 0.5rem 2rem;
 }
+.navbarResume a{
+   
+    color: white;
+    text-decoration: none;
+}
 
 .navbarHamburger{
     display: none;

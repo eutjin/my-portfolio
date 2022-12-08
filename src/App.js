@@ -27,15 +27,53 @@ function App() {
   return (
     <div className="App">
 
-      {menu &&
-      <div id="menuOverlay"className="menuOverlay" onClick={(e)=>handleClickOverlay(e)}>
-      <div className="menuContainer">
+     
+      <div id="menuOverlay"className={menu? "menuOverlay":"hidden"} onClick={(e)=>handleClickOverlay(e)}>
+      <div className={menu? "menuContainer": "menuContainerOff"}>
       <div className="menuContainerTop">
         <AiOutlineClose size={28} onClick={()=>setMenu(false)}/>
       </div>
+      <div className="menuContainerContent">
+      <div className="menuContainerItem">
+        About
+        </div>
+        <div className="menuContainerItem">
+        Skills
+        </div>
+        <div className="menuContainerItem">
+        Career
+        </div>
+        <div className="menuContainerItem">
+        Projects
+        </div>
       </div>
       </div>
-      }
+      </div>
+      
+
+{/* {menu &&
+      <div id="menuOverlay"className="menuOverlay" onClick={(e)=>handleClickOverlay(e)}>
+      <div className={menu? "menuContainer": "menuContainerOff"}>
+      <div className="menuContainerTop">
+        <AiOutlineClose size={28} onClick={()=>setMenu(false)}/>
+      </div>
+      <div className="menuContainerContent">
+      <div className="menuContainerItem">
+        About
+        </div>
+        <div className="menuContainerItem">
+        Skills
+        </div>
+        <div className="menuContainerItem">
+        Career
+        </div>
+        <div className="menuContainerItem">
+        Projects
+        </div>
+      </div>
+      </div>
+      </div>
+      } */}
       
       <Navbar setMenu={setMenu}/>
       <Content/>

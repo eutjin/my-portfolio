@@ -19,7 +19,7 @@ function Navbar({setMenu}) {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarContents}>
-        <div className={styles.navbarLeft}>Navbar</div>
+        <div className={styles.navbarLeft}><strong> &lt; eutjin-dev /&gt; </strong></div>
         <div className={styles.navbarRight}>
           <div className={styles.navbarItem} onClick={()=>window.location="#skills"}>Skills</div>
           <div className={styles.navbarItem} onClick={()=>window.location="#career"}>Education</div>

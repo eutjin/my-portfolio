@@ -183,6 +183,11 @@ strong {
   width: 10rem;
   border: none;
 }
+.heroMoreBtnTxt:hover{
+  transform: translateY(-3px);
+  box-shadow: rgb(0 0 0 / 15%) 0 3px 9px 0;
+}
+
 
 .heroProjectBtn{
   background-color: rgba(0, 0, 0, 0);
@@ -204,7 +209,7 @@ strong {
 }
 
 .heroProjectBtn:hover{
-  background-color: rgba(0, 0, 0, 0);
+  
   padding: 0.7rem 0;
  
   margin-top: 2rem;

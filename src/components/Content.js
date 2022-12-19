@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import {AnimatePresence, motion,  useScroll } from 'framer-motion'
+// import { useViewportScroll } from 'react-intersection-observer'
+import { useInView } from 'react-intersection-observer'
 import styles from "./Content.module.css";
 import Hero from "./Hero";
 import {
@@ -51,7 +54,8 @@ function Content() {
   const [cardOn, setCardOn] = useState(false);
   const [cardOn2, setCardOn2] = useState(false);
   const [flipCard, setFlipCard] = useState(false);
-
+  const { scrollYProgress } = useScroll();
+  const [ref, inView] = useInView()
   // const reportScroll = () => {
   //   console.log(window.scrollY);
   //   if (!myRef.current || !myRef2.current) return;
@@ -73,32 +77,34 @@ function Content() {
 
   // window.addEventListener("scroll", reportScroll);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      console.log("ENTRY", entry);
-      if (entry.isIntersecting) {
-        setCardOn(true);
-      } else {
-        setCardOn(false);
-      }
-    });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     console.log("ENTRY", entry);
+  //     if (entry.isIntersecting) {
+  //       setCardOn(true);
+  //     } else {
+  //       setCardOn(false);
+  //       observer.unobserve(entry)
 
-    observer.observe(myRef.current);
-  }, []);
+  //     }
+  //   });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      console.log("ENTRY", entry);
-      if (entry.isIntersecting) {
-        setCardOn2(true);
-      } else {
-        setCardOn2(false);
-      }
-    });
-    observer.observe(myRef3.current);
-  }, []);
+  //   observer.observe(myRef.current);
+  // }, []);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     console.log("ENTRY", entry);
+  //     if (entry.isIntersecting) {
+  //       setCardOn2(true);
+  //     } else {
+  //       setCardOn2(false);
+  //     }
+  //   });
+  //   observer.observe(myRef3.current);
+  // }, []);
 
   return (
     <div className={styles.contentContainer}>
@@ -322,9 +328,23 @@ function Content() {
 
           {/* proj1 */}
           <div className={styles.projectBox}>
-            <div className={styles.projectBoxImg}>
+          
+          
+            <motion.div
+            
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
+            variants={{
+              visible: { opacity: 1,  x:0 },
+              hidden: { opacity: 0,  x:'-100%' }
+            }}
+            
+              className={styles.projectBoxImg}
+            >
               <img src={p1} className={styles.projectImg} />
-            </div>
+            </motion.div>
             <div className={styles.projectBoxContent}>
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
@@ -480,8 +500,8 @@ function Content() {
 
       <div className={styles.eduContainer} id="career">
         <div className={styles.eduContents}>
-           {/* career */}
-           <div className={styles.eduBox}>
+          {/* career */}
+          <div className={styles.eduBox}>
             <div className={styles.eduBoxContent}>
               <div className={styles.eduBoxHeader}>Career</div>
               <div className={styles.eduBoxInfo}>
@@ -524,9 +544,6 @@ function Content() {
             </div>
           </div>
           <div className={styles.eduBox}>
-
-
-            
             <div className={styles.eduBoxContent}>
               <div className={styles.eduBoxHeader}>Education</div>
               <div className={styles.eduBoxInfo}>
@@ -671,12 +688,8 @@ function Content() {
               </div>
             </div>
           </div>
-
-         
         </div>
       </div>
-
-      
     </div>
   );
 }

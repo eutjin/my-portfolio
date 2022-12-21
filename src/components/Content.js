@@ -77,34 +77,34 @@ function Content() {
 
   // window.addEventListener("scroll", reportScroll);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const entry = entries[0];
-  //     console.log("ENTRY", entry);
-  //     if (entry.isIntersecting) {
-  //       setCardOn(true);
-  //     } else {
-  //       setCardOn(false);
-  //       observer.unobserve(entry)
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      console.log("ENTRY", entry);
+      if (entry.isIntersecting) {
+        setCardOn(true);
+      } else {
+        setCardOn(false);
+        observer.unobserve(entry)
 
-  //     }
-  //   });
+      }
+    });
 
-  //   observer.observe(myRef.current);
-  // }, []);
+    observer.observe(myRef.current);
+  }, []);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const entry = entries[0];
-  //     console.log("ENTRY", entry);
-  //     if (entry.isIntersecting) {
-  //       setCardOn2(true);
-  //     } else {
-  //       setCardOn2(false);
-  //     }
-  //   });
-  //   observer.observe(myRef3.current);
-  // }, []);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      console.log("ENTRY", entry);
+      if (entry.isIntersecting) {
+        setCardOn2(true);
+      } else {
+        setCardOn2(false);
+      }
+    });
+    observer.observe(myRef3.current);
+  }, []);
 
   return (
     <div className={styles.contentContainer}>

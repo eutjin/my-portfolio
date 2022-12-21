@@ -77,40 +77,41 @@ function Content() {
 
   // window.addEventListener("scroll", reportScroll);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      console.log("ENTRY", entry);
-      if (entry.isIntersecting) {
-        setCardOn(true);
-      } else {
-        setCardOn(false);
-        observer.unobserve(entry)
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     // console.log("ENTRY", entry);
+  //     if (entry.isIntersecting) {
+  //       setCardOn(true);
+  //     } else {
+  //       setCardOn(false);
+        
 
-      }
-    });
+  //     }
+  //   });
 
-    observer.observe(myRef.current);
-  }, []);
+  //   observer.observe(myRef.current);
+  // }, []);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      console.log("ENTRY", entry);
-      if (entry.isIntersecting) {
-        setCardOn2(true);
-      } else {
-        setCardOn2(false);
-      }
-    });
-    observer.observe(myRef3.current);
-  }, []);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     const entry = entries[0];
+  //     // console.log("ENTRY", entry);
+  //     if (entry.isIntersecting) {
+  //       setCardOn2(true);
+  //     } else {
+  //       setCardOn2(false);
+  //     }
+  //   });
+  //   observer.observe(myRef3.current);
+  // }, []);
 
   return (
     <div className={styles.contentContainer}>
       {/* <Hero/> */}
 
       <div className={styles.heroContainer} ref={myRef2} id="hero">
+      {/* <div className={styles.heroMain}> */}
         <div className={styles.heroContents}>
           <div
             className={styles.heroLeft}
@@ -172,7 +173,7 @@ function Content() {
         </div>
       </div>
 
-      <div className={styles.techContainer} id="skills">
+      {/* <div className={styles.techContainer} id="skills">
         <div className={styles.techContents}>
           <div className={styles.techText1}>Technologies I use and enjoy</div>
           <div className={styles.techList2} ref={myRef}>
@@ -320,7 +321,7 @@ function Content() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.projectContainer} id="projects">
         <div className={styles.projectContents}>

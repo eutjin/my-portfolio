@@ -51,11 +51,12 @@ function Content() {
   const myRef2 = useRef();
   const myRef3 = useRef();
   const height = 300;
-  const [cardOn, setCardOn] = useState(false);
+  const [cardOn, setCardOn] = useState(true);
   const [cardOn2, setCardOn2] = useState(false);
   const [flipCard, setFlipCard] = useState(false);
   const { scrollYProgress } = useScroll();
-  const [ref, inView] = useInView()
+  const [ref1, inView1] = useInView()
+  const [ref2, inView2] = useInView()
   // const reportScroll = () => {
   //   console.log(window.scrollY);
   //   if (!myRef.current || !myRef2.current) return;
@@ -92,6 +93,26 @@ function Content() {
 
   //   observer.observe(myRef.current);
   // }, []);
+
+  useEffect(()=>{
+
+    console.log("inview", inView1)
+    if(inView1){
+      setCardOn(true)
+    }else{
+      setCardOn(false)
+    }
+  }, [inView1])
+
+  useEffect(()=>{
+
+    console.log("inview2", inView2)
+    if(inView2){
+      setCardOn2(true)
+    }else{
+      setCardOn2(false)
+    }
+  }, [inView2])
 
   // useEffect(() => {
   //   const observer = new IntersectionObserver((entries) => {
@@ -173,10 +194,10 @@ function Content() {
         </div>
       </div>
 
-      {/* <div className={styles.techContainer} id="skills">
+      <div className={styles.techContainer} id="skills">
         <div className={styles.techContents}>
           <div className={styles.techText1}>Technologies I use and enjoy</div>
-          <div className={styles.techList2} ref={myRef}>
+          <div className={styles.techList2} ref={ref1}>
             <div className={cardOn ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
                 <div className={styles.techItemLine1}>Front-End</div>
@@ -253,9 +274,9 @@ function Content() {
           </div>
         </div>
 
-        <div className={styles.techContents2}>
-          <div className={styles.techText2}>Tools</div>
-          <div className={styles.techList2} ref={myRef3}>
+        <div className={styles.techContents2} ref={ref2}>
+          <div className={styles.techText2} >Tools</div>
+          <div className={styles.techList2} >
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
                 <div className={styles.techItemLine1}>Front-End</div>
@@ -321,10 +342,10 @@ function Content() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      <div className={styles.projectContainer} id="projects">
-        <div className={styles.projectContents}>
+      <div className={styles.projectContainer} >
+        <div className={styles.projectContents} id="projects">
           <div className={styles.projectText1}>Things I have built</div>
 
           {/* proj1 */}

@@ -34,17 +34,20 @@ function App() {
         <AiOutlineClose size={28} onClick={()=>setMenu(false)}/>
       </div>
       <div className="menuContainerContent">
-      <div className="menuContainerItem">
+      <div className="menuContainerItem" onClick={()=>{window.location="#hero"; setMenu(false)}}>
         About
         </div>
-        <div className="menuContainerItem">
+        <div className="menuContainerItem"  onClick={()=>{window.location="#skills"; setMenu(false)}}>
         Skills
         </div>
-        <div className="menuContainerItem">
+        <div className="menuContainerItem" onClick={()=>{window.location="#projects"; setMenu(false)}}>
+        Projects
+        </div>
+        <div className="menuContainerItem" onClick={()=>{window.location="#career"; setMenu(false)}}>
         Career
         </div>
-        <div className="menuContainerItem">
-        Projects
+        <div className="menuContainerItem" onClick={()=>{window.location="#education"; setMenu(false)}}>
+        Education
         </div>
       </div>
       </div>

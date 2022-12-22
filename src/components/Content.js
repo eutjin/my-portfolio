@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import {AnimatePresence, motion,  useScroll } from 'framer-motion'
+import { AnimatePresence, motion, useScroll } from "framer-motion";
 // import { useViewportScroll } from 'react-intersection-observer'
-import { useInView } from 'react-intersection-observer'
+import { useInView } from "react-intersection-observer";
 import styles from "./Content.module.css";
 import Hero from "./Hero";
 import {
@@ -22,6 +22,7 @@ import {
   AiOutlineTool,
   AiOutlineMenu,
   AiOutlineFilePdf,
+  AiFillCaretRight,
 } from "react-icons/ai";
 import {
   SiHtml5,
@@ -55,8 +56,8 @@ function Content() {
   const [cardOn2, setCardOn2] = useState(false);
   const [flipCard, setFlipCard] = useState(false);
   const { scrollYProgress } = useScroll();
-  const [ref1, inView1] = useInView()
-  const [ref2, inView2] = useInView()
+  const [ref1, inView1] = useInView();
+  const [ref2, inView2] = useInView();
   // const reportScroll = () => {
   //   console.log(window.scrollY);
   //   if (!myRef.current || !myRef2.current) return;
@@ -86,7 +87,6 @@ function Content() {
   //       setCardOn(true);
   //     } else {
   //       setCardOn(false);
-        
 
   //     }
   //   });
@@ -94,25 +94,23 @@ function Content() {
   //   observer.observe(myRef.current);
   // }, []);
 
-  useEffect(()=>{
-
-    console.log("inview", inView1)
-    if(inView1){
-      setCardOn(true)
-    }else{
-      setCardOn(false)
+  useEffect(() => {
+    console.log("inview", inView1);
+    if (inView1) {
+      setCardOn(true);
+    } else {
+      setCardOn(false);
     }
-  }, [inView1])
+  }, [inView1]);
 
-  useEffect(()=>{
-
-    console.log("inview2", inView2)
-    if(inView2){
-      setCardOn2(true)
-    }else{
-      setCardOn2(false)
+  useEffect(() => {
+    console.log("inview2", inView2);
+    if (inView2) {
+      setCardOn2(true);
+    } else {
+      setCardOn2(false);
     }
-  }, [inView2])
+  }, [inView2]);
 
   // useEffect(() => {
   //   const observer = new IntersectionObserver((entries) => {
@@ -132,7 +130,7 @@ function Content() {
       {/* <Hero/> */}
 
       <div className={styles.heroContainer} ref={myRef2} id="hero">
-      {/* <div className={styles.heroMain}> */}
+        {/* <div className={styles.heroMain}> */}
         <div className={styles.heroContents}>
           <div
             className={styles.heroLeft}
@@ -275,8 +273,8 @@ function Content() {
         </div>
 
         <div className={styles.techContents2} ref={ref2}>
-          <div className={styles.techText2} >Tools</div>
-          <div className={styles.techList2} >
+          <div className={styles.techText2}>Tools</div>
+          <div className={styles.techList2}>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
                 <div className={styles.techItemLine1}>Front-End</div>
@@ -344,30 +342,40 @@ function Content() {
         </div>
       </div>
 
-      <div className={styles.projectContainer} >
+      <div className={styles.projectContainer}>
         <div className={styles.projectContents} id="projects">
           <div className={styles.projectText1}>Things I have built</div>
 
           {/* proj1 */}
           <div className={styles.projectBox}>
-          
-          
             <motion.div
-            
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
-            variants={{
-              visible: { opacity: 1,  x:0 },
-              hidden: { opacity: 0,  x:'-100%' }
-            }}
-            
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "-80%" },
+              }}
               className={styles.projectBoxImg}
             >
               <img src={p1} className={styles.projectImg} />
             </motion.div>
-            <div className={styles.projectBoxContent}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400, damping:25
+              }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "80%" },
+              }}
+              className={styles.projectBoxContent}
+            >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
                 <span>GunaeSik</span>
@@ -403,28 +411,60 @@ function Content() {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button>
+                <button onClick={() => window.open("https://gunaesik.com")}>
                   <AiOutlineGlobal size={22} />
                   Live site
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.open("https://github.com/eutjin/kakao-map")
+                  }
+                >
                   <AiOutlineGithub size={22} />
                   Github
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://www.notion.so/GunaeSik-fc473e7319174e7eba4c0ef263d162cb"
+                    )
+                  }
+                >
                   <AiOutlineTool size={22} />
-                  More details
+                  Documentation
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* proj1 */}
           <div className={styles.projectBox}>
-            <div className={styles.projectBoxImg}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, type: "spring",stiffness: 400, damping:25 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "-100%" },
+              }}
+              className={styles.projectBoxImg}
+            >
               <img src={p1} className={styles.projectImg} />
-            </div>
-            <div className={styles.projectBoxContent}>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400, damping:25
+              }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "80%" },
+              }} className={styles.projectBoxContent}>
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
                 <span>Enerlyzr.kr</span>
@@ -460,28 +500,60 @@ function Content() {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button>
+                <button onClick={() => window.open("https://enerlyzr.com")}>
                   <AiOutlineGlobal size={22} />
                   Live site
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.open("https://github.com/eutjin/Power-Generator-App")
+                  }
+                >
                   <AiOutlineGithub size={22} />
                   Github
                 </button>
-                <button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://www.notion.so/Enerlyzer-project-0affb238546440fdb4610fd31bf2fd48"
+                    )
+                  }
+                >
                   <AiOutlineTool size={22} />
-                  More details
+                  Documentation
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* proj2 */}
           <div className={styles.projectBox}>
-            <div className={styles.projectBoxImg}>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "-100%" },
+              }}
+              className={styles.projectBoxImg}
+            >
               <img src={p2} className={styles.projectImg} />
-            </div>
-            <div className={styles.projectBoxContent}>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400, damping:25
+              }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "80%" },
+              }} className={styles.projectBoxContent}>
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
                 <span>MoviReVue</span>
@@ -511,11 +583,30 @@ function Content() {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button>Live site</button>
-                <button>Github</button>
-                <button>More details</button>
+                <button onClick={() => window.open("https://movirevue.com")}>
+                  <AiOutlineGlobal size={22} />
+                  Live site
+                </button>
+                <button
+                  onClick={() =>
+                    window.open("https://github.com/eutjin/React-Movie-App2")
+                  }
+                >
+                  <AiOutlineGithub size={22} />
+                  Github
+                </button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://www.notion.so/Movie-APP-55f9295af1c147e7ad53141d457f49e3"
+                    )
+                  }
+                >
+                  <AiOutlineTool size={22} />
+                  Documentation
+                </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -528,28 +619,130 @@ function Content() {
               <div className={styles.eduBoxHeader}>Career</div>
               <div className={styles.eduBoxInfo}>
                 <div className={styles.timelineContainer}>
-                  <div className={styles.timeline1}>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 80,
+                    }}
+                    variants={{
+                      visible: { opacity: 1, y: 0 },
+                      hidden: { opacity: 0, y: "-50px" },
+                    }}
+                    className={styles.timeline1}
+                  >
                     <div className={styles.timelineHeader}>
                       May, 2018 - Present
                     </div>
                     <div className={styles.timelineText1}>
-                      Team Leader, Product Quality team
+                      Technical Support Specialist, Quality team
                     </div>
                     <div className={styles.timelineText2}>
                       GOQUAL Inc, South Korea
                     </div>
-                    <div className={styles.timelineText3}>
-                      <span>Research topic: </span>
+                    <div className={styles.timelineText3Custom}>
                       <span>
-                        {" "}
-                        A Novel Algorithm for Optimal Operation and Sizing of
-                        Generator-Photovoltaic-Energy Storage System for
-                        Minimizing Cost of Energy
+                        I have joined the IoT startup as the 6th member and have
+                        held multiple roles ever since. My job roles require me
+                        to constantly solve issues and communicate with teams
+                        both internal and external to the company.{" "}
+                      </span>
+                      <span>
+                        <AiFillCaretRight size={16} />
+                        <strong>Technical Support (Chief Specialist)</strong>
+                      </span>
+                      <span>
+                        <AiFillCaretRight size={16} />
+                        <strong>Quality Control and Assurance (QC/QA)</strong>
+                      </span>
+                      <span>
+                        <AiFillCaretRight size={16} />
+                        <strong>
+                          Product Sourcing and Production Management
+                        </strong>
                       </span>
                     </div>
-                    <div className={styles.timelineBall}></div>
-                  </div>
-                  <div className={styles.timeline1}>
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 80,
+                      }}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: "200px" },
+                      }}
+                      className={styles.timelineBall}
+                    ></motion.div>
+                  </motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 80,
+                    }}
+                    variants={{
+                      visible: { opacity: 1, y: 0 },
+                      hidden: { opacity: 0, y: "50px" },
+                    }}
+                    className={styles.timeline1}
+                  >
+                    <div className={styles.timelineHeader}>
+                      June, 2010 - June, 2014
+                    </div>
+                    <div className={styles.timelineText1}>
+                      Research Intern
+                    </div>
+                    <div className={styles.timelineText2}>
+                    Remotec Technology Ltd. (Hong Kong)</div>
+                    <div className={styles.timelineText3Custom}>
+                      <span>
+                      Research project on control algorithm to enable intelligent operation of air conditioners with the aim to reduce energy consumption while maintaining user comfort levels.</span>
+                     
+                    </div>
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 80,
+                      }}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: "200px" },
+                      }}
+                      className={styles.timelineBall}
+                    ></motion.div>
+                  </motion.div>
+
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 80,
+                    }}
+                    variants={{
+                      visible: { opacity: 1, y: 0 },
+                      hidden: { opacity: 0, y: "50px" },
+                    }}
+                    className={styles.timeline1}
+                  >
                     <div className={styles.timelineHeader}>
                       June, 2010 - June, 2014
                     </div>
@@ -559,18 +752,50 @@ function Content() {
                     <div className={styles.timelineText2}>
                       Universiti Tunku Abdul Rahman (UTAR), Malaysia
                     </div>
-                    <div className={styles.timelineBall}></div>
-                  </div>
+                    <div className={styles.timelineText3Custom}>
+                      <span>
+                      Research project on EMS, which was successfully installed in a university building and energy savings were achieved. </span>
+                     
+                    </div>
+                    <motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 80,
+                      }}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: "200px" },
+                      }}
+                      className={styles.timelineBall}
+                    ></motion.div>
+                  </motion.div>
                 </div>
               </div>
             </div>
           </div>
-          <div className={styles.eduBox}>
+          <div className={styles.eduBox} id="education">
             <div className={styles.eduBoxContent}>
               <div className={styles.eduBoxHeader}>Education</div>
               <div className={styles.eduBoxInfo}>
                 <div className={styles.timelineContainer}>
-                  <div className={styles.timeline1}>
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 80,
+                    }}
+                    variants={{
+                      visible: { opacity: 1, y: 0 },
+                      hidden: { opacity: 0, y: "-50px" },
+                    }} className={styles.timeline1}>
                     <div className={styles.timelineHeader}>
                       June <strong>2014</strong> - June <strong>2017</strong>
                     </div>
@@ -650,9 +875,34 @@ function Content() {
                         </button>
                       </div>
                     </div>
-                    <div className={styles.timelineBall}></div>
-                  </div>
-                  <div className={styles.timeline1}>
+                    < motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 80,
+                      }}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: "200px" },
+                      }} className={styles.timelineBall}></motion.div>
+                  </motion.div>
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: false }}
+                    transition={{
+                      duration: 0.8,
+                      type: "spring",
+                      stiffness: 80,
+                    }}
+                    variants={{
+                      visible: { opacity: 1, y: 0 },
+                      hidden: { opacity: 0, y: "-50px" },
+                    }} className={styles.timeline1}>
                     <div className={styles.timelineHeader}>
                       June <strong>2010</strong> - June <strong>2014</strong>
                     </div>
@@ -663,14 +913,15 @@ function Content() {
                       Universiti Tunku Abdul Rahman (UTAR), Malaysia
                     </div>
                     <div className={styles.timelineText3}>
-                      <div>
+                      <span>
                         <strong>Awards: </strong>
-                      </div>
-                      <span> 1. Innovate Malaysia Design Competiton 2014</span>
-                      <span className={styles.timelineTag}>
-                        {" "}
-                        Grand Prize: National Instruments track
                       </span>
+
+                      <span> 1. Innovate Malaysia Design Competiton 2014</span>
+                      <div className={styles.timelineTag}>
+                        <AiFillCaretRight size={16} />
+                        Grand Prize: National Instruments track
+                      </div>
                       <span>
                         Energy Link: An Interactive Energy Management Platform
                       </span>
@@ -688,9 +939,10 @@ function Content() {
                         2. Fifth Technopreneurship and Innovation Symposium and
                         Exhibition (TISE) 2013
                       </span>
-                      <span className={styles.timelineTag}>
+                      <div className={styles.timelineTag}>
+                        <AiFillCaretRight size={16} />
                         Winner: Young Intellectual category
-                      </span>
+                      </div>
                       <span>
                         Dr Energy: a plug-and-play, multifunctional electrical
                         power diagnostic platform
@@ -704,8 +956,21 @@ function Content() {
                         </button>
                       </div>
                     </div>
-                    <div className={styles.timelineBall}></div>
-                  </div>
+                    < motion.div
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: false }}
+                      transition={{
+                        delay: 0.5,
+                        duration: 1,
+                        type: "spring",
+                        stiffness: 80,
+                      }}
+                      variants={{
+                        visible: { opacity: 1, y: 0 },
+                        hidden: { opacity: 0, y: "200px" },
+                      }}className={styles.timelineBall}></motion.div>
+                  </motion.div>
                 </div>
               </div>
             </div>

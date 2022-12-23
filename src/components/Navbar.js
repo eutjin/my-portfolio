@@ -13,7 +13,7 @@ import {
   AiOutlineUser,
   AiOutlineArrowDown,AiOutlineMenu
 } from "react-icons/ai";
-import samplePDF from '../assets/file1.pdf';
+import samplePDF from '../assets/resume221220.pdf';
 
 function Navbar({setMenu}) {
   return (

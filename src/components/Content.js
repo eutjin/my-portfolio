@@ -351,11 +351,11 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "-80%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }}
               className={styles.projectBoxImg}
             >
@@ -364,15 +364,15 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.8,
                 type: "spring",
                 stiffness: 400, damping:25
               }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "80%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }}
               className={styles.projectBoxContent}
             >
@@ -442,11 +442,11 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring",stiffness: 400, damping:25 }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "-100%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }}
               className={styles.projectBoxImg}
             >
@@ -455,15 +455,15 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.8,
                 type: "spring",
                 stiffness: 400, damping:25
               }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "80%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }} className={styles.projectBoxContent}>
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
@@ -531,11 +531,11 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "-100%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }}
               className={styles.projectBoxImg}
             >
@@ -544,15 +544,15 @@ function Content() {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.8,
                 type: "spring",
                 stiffness: 400, damping:25
               }}
               variants={{
-                visible: { opacity: 1, x: 0 },
-                hidden: { opacity: 0, x: "80%" },
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "250px" },
               }} className={styles.projectBoxContent}>
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>

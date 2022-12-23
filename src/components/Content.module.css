@@ -500,7 +500,7 @@ cursor: pointer;
   flex-direction: row;
   margin-bottom: 3rem;
   /* border-radius: 1.5rem; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .projectBox2{
@@ -816,9 +816,10 @@ gap: 0.5rem;
 
 }
 .heroLeft{
-  width: 80%;
+  /* width: 80%; */
   height: 50%;
   margin: 0 auto;
+  /* padding: 0; */
 }
 .heroRight{
   width: 100%;

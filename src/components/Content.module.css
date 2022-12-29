@@ -582,6 +582,7 @@ border-radius: 1rem;
   flex-wrap: wrap;
   margin-bottom: 2rem;
  color: white;
+ font-size: 0.9rem;
  /* justify-content: center; */
 }
 .projectBoxTags span{
@@ -601,17 +602,21 @@ border-radius: 1rem;
   background-color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
   font-size: 1rem;
+ 
   border-radius: 0.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   background: none;
-  width: 30%;
+  width: calc((calc(100%/3)) - calc(2rem/3));
+}
+.projectBoxButtonGroup button:hover{
+  background-color: white;
 }
 
 .projectBoxButtonGroup button:nth-child(3){
-  border: 2px solid rgb(24, 24, 24);
+  border: 2px solid rgb(48, 48, 48);
   /* background-color: rgb(200, 200, 200); */
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -621,10 +626,14 @@ border-radius: 1rem;
   align-items: center;
   gap: 0.5rem;
   background: none;
-  background-color: rgb(24, 24, 24);
+  background-color: rgb(48, 48, 48);
   color: white;
+ 
 }
-
+.projectBoxButtonGroup button:nth-child(3):hover{
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 0, 0);
+}
 
 
 
@@ -787,6 +796,59 @@ gap: 0.5rem;
   border: 3px solid white;
 }
 
+.footerContainer{
+  min-height: 20vh;
+    background-color: rgb(58, 58, 58);
+}
+.footerContents{
+  max-width: var(--content-width);
+  color: white;
+  margin: 0 auto;
+  height: 100%;
+ 
+  padding: 1rem 2rem;
+  /* padding: 1rem; */
+  /* position: relative; */
+  /* display: flex;
+  flex-direction: column;
+  padding: 5rem 1rem;
+  gap: 2rem; */
+}
+
+.footerLine1{
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.footerLine2{
+  font-size: 0.9rem;
+  font-weight: 300;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+  margin-bottom: 1rem;
+}
+
+
+.footerLine3{
+ font-weight: 600;
+  margin-bottom: 0.5rem;
+  
+}
+.footerLine4{
+  font-size: 0.9rem;
+  font-weight: 300;
+  display: flex;
+  gap: 2rem;
+ 
+  flex-wrap: wrap;
+}
+.modalOverlay{
+  background-color: black;
+  height: 100%;
+}
+
 @media (max-width: 1000px){
   .heroText1 {
     font-size: 1.5rem;
@@ -806,6 +868,16 @@ gap: 0.5rem;
     /* text-align: center; */
     font-weight: 300;
     line-height: 1.5rem;
+  }
+
+  .projectBoxButtonGroup button:nth-child(1){
+    width: calc(50% - 0.5rem);
+  }
+  .projectBoxButtonGroup button:nth-child(2){
+    width: calc(50% - 0.5rem);
+  }
+  .projectBoxButtonGroup button:nth-child(3){
+    width: 100%;
   }
 }
 
@@ -899,6 +971,7 @@ object-fit: cover;
   }
   .projectBoxTags{
     margin-bottom: 1.5rem;
+    
   }
   .eduBoxContent{
     padding: 2rem 1rem;

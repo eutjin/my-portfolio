@@ -27,10 +27,10 @@ function Navbar({setMenu}) {
           <div className={styles.navbarItem} onClick={()=>window.location="#career"}>Career</div>
           <div className={styles.navbarItem} onClick={()=>window.location="#education"}>Education</div>
          
-          <div className={styles.navbarResume}><a href={samplePDF} target="_blank" 
+          {/* <div className={styles.navbarResume}><a href={samplePDF} target="_blank" 
                     >
                    Resume
-                </a></div>
+                </a></div> */}
         </div>
         <div className={styles.navbarHamburger} onClick={()=>setMenu(true)}><AiOutlineMenu size={28}/></div>
       </div>

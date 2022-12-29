@@ -70,3 +70,156 @@ padding: 1rem;
   justify-content: center;
   font-size: 1.3rem;
 }
+
+.modalOverlay{
+  background-color: rgba(0, 0, 0, 0.656);
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer{
+width: min(95%, 800px);
+min-height: 400px;
+background-color: white;
+margin: 0 auto;
+padding: 1.5rem ;
+border-radius: 0.5rem;
+}
+
+.modalText1{
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.modalText1 span:nth-of-type(2){
+  
+  width:1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+}
+.modalText1 span:nth-of-type(2):hover{
+  background-color: rgb(238, 238, 238);
+}
+
+
+
+.modalContent{
+  display: flex;
+  gap: 2rem;
+}
+.modalContent1{
+  width: 50%;
+ 
+ 
+}
+
+.modalContent1::after{
+  content: "";
+    display: block;
+  border-right: 1px solid black;
+}
+.modalContent2{
+  width: 50%;
+  
+}
+
+.modalContent1Img{
+  width: 60%;
+  margin: 0 auto;
+}
+.qrImage{
+  width:100%;
+  
+}
+
+.modalContent1Text1{
+  margin-bottom: 1rem;
+}
+.modalContent2Text1{
+  margin-bottom: 1rem;
+}
+
+.liveSiteBtn{
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  padding: 0.7rem 0;
+  margin-bottom: 2rem; 
+  background-color: rgb(77, 77, 77);
+  
+   
+    font-weight: 600;
+    border-radius: 0.5rem;
+    color: white;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    
+   
+}
+
+.liveSiteBtn:hover{
+  background-color: rgb(48, 48, 48);
+}
+
+.accountPwContainer{
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 12px;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.accountPwContainer{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.accountPwContainer span:first-of-type{
+  background-color: rgb(143, 202, 229);
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 1rem;
+  width: 10rem;
+  color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.accountPwContainer span:nth-of-type(2){
+  margin-bottom: 1rem;
+}
+
+.accountPwContainer span:nth-of-type(3) {
+  font-size: 0.9rem;
+  color: rgb(107, 107, 107);
+}
+
+.accountPwContainer span:nth-of-type(4) {
+  font-size: 0.9rem;
+  color: rgb(107, 107, 107);
+}
+
+@media (max-width: 800px){
+ 
+  .modalContent1{
+      display: none;
+  }
+  .modalContent2{
+    width: 100%;
+  }
+}

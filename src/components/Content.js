@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 // import { useViewportScroll } from 'react-intersection-observer'
 import { useInView } from "react-intersection-observer";
 import styles from "./Content.module.css";
+import samplePDF from '../assets/resume221220.pdf';
 import Hero from "./Hero";
 import {
   AiOutlineHome,
@@ -47,7 +48,7 @@ import photo2 from "../assets/peep2.png";
 import p1 from "../assets/proj1.png";
 import p2 from "../assets/proj2.png";
 
-function Content() {
+function Content({setModal1, setModal2, setModal3}) {
   const myRef = useRef();
   const myRef2 = useRef();
   const myRef3 = useRef();
@@ -58,6 +59,8 @@ function Content() {
   const { scrollYProgress } = useScroll();
   const [ref1, inView1] = useInView();
   const [ref2, inView2] = useInView();
+  const [inview1Pass, setInview1Pass]= useState(false)
+  const [inview2Pass, setInview2Pass]= useState(false)
   // const reportScroll = () => {
   //   console.log(window.scrollY);
   //   if (!myRef.current || !myRef2.current) return;
@@ -96,21 +99,38 @@ function Content() {
 
   useEffect(() => {
     console.log("inview", inView1);
-    if (inView1) {
-      setCardOn(true);
-    } else {
-      setCardOn(false);
+    if(!inview1Pass){
+      if (inView1) {
+        setCardOn(true);
+        setInview1Pass(true)
+      } else {
+        setCardOn(false);
+      }
+      
     }
+    
   }, [inView1]);
 
   useEffect(() => {
     console.log("inview2", inView2);
+    if(!inview2Pass){
     if (inView2) {
       setCardOn2(true);
+      setInview2Pass(true)
     } else {
       setCardOn2(false);
     }
+  }
   }, [inView2]);
+
+  // useEffect(() => {
+  //   console.log("inview2", inView2);
+  //   if (inView2) {
+  //     setCardOn2(true);
+  //   } else {
+  //     setCardOn2(false);
+  //   }
+  // }, [inView2]);
 
   // useEffect(() => {
   //   const observer = new IntersectionObserver((entries) => {
@@ -169,15 +189,24 @@ function Content() {
             <div className={styles.heroBtnGroup}>
               <button
                 className={styles.heroMoreBtnTxt}
+                
+              >
+              <a href={samplePDF} target="_blank" 
+                    >
+                   Resume
+                </a>
+              </button>
+              {/* <button
+                className={styles.heroMoreBtnTxt}
                 onClick={() => (window.location = "#skills")}
               >
                 See More
-              </button>
+              </button> */}
               <button
                 className={styles.heroProjectBtn}
-                onClick={() => (window.location = "#projects")}
+                onClick={() => (window.location = "#skills")}
               >
-                Projects
+                See More
               </button>
             </div>
             {/* <div className={styles.heroText3}>
@@ -277,7 +306,7 @@ function Content() {
           <div className={styles.techList2}>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+                {/* <div className={styles.techItemLine1}> </div> */}
                 <div className={styles.techItemLine2}>
                   <SiFigma size={60} />
                 </div>
@@ -286,7 +315,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+                {/* <div className={styles.techItemLine1}>Front-End</div> */}
                 <div className={styles.techItemLine2}>
                   <SiGit size={60} />
                 </div>
@@ -295,7 +324,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+                
                 <div className={styles.techItemLine2}>
                   <SiGithub size={60} />
                 </div>
@@ -304,7 +333,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Photoshop</div>
+                
                 <div className={styles.techItemLine2}>
                   <SiAdobephotoshop size={60} />
                 </div>
@@ -313,7 +342,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+                
                 <div className={styles.techItemLine2}>
                   <SiAdobelightroom size={60} />
                 </div>
@@ -322,7 +351,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+               
                 <div className={styles.techItemLine2}>
                   <SiSlack size={60} />
                 </div>
@@ -331,7 +360,7 @@ function Content() {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                <div className={styles.techItemLine1}>Front-End</div>
+                
                 <div className={styles.techItemLine2}>
                   <SiVisualstudiocode size={60} />
                 </div>
@@ -341,7 +370,7 @@ function Content() {
           </div>
         </div>
       </div>
-
+     
       <div className={styles.projectContainer}>
         <div className={styles.projectContents} id="projects">
           <div className={styles.projectText1}>Things I have built</div>
@@ -430,7 +459,7 @@ function Content() {
                     )
                   }
                 >
-                  <AiOutlineTool size={22} />
+                  
                   Documentation
                 </button>
               </div>
@@ -519,7 +548,7 @@ function Content() {
                     )
                   }
                 >
-                  <AiOutlineTool size={22} />
+                  
                   Documentation
                 </button>
               </div>
@@ -583,7 +612,7 @@ function Content() {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button onClick={() => window.open("https://movirevue.com")}>
+                <button onClick={() => setModal3(true)}>
                   <AiOutlineGlobal size={22} />
                   Live site
                 </button>
@@ -602,7 +631,7 @@ function Content() {
                     )
                   }
                 >
-                  <AiOutlineTool size={22} />
+                  
                   Documentation
                 </button>
               </div>
@@ -912,18 +941,19 @@ function Content() {
                     <div className={styles.timelineText2}>
                       Universiti Tunku Abdul Rahman (UTAR), Malaysia
                     </div>
+                    <div className={styles.horizontalDivider}></div>
                     <div className={styles.timelineText3}>
                       <span>
                         <strong>Awards: </strong>
                       </span>
-
+                      
                       <span> 1. Innovate Malaysia Design Competiton 2014</span>
                       <div className={styles.timelineTag}>
                         <AiFillCaretRight size={16} />
                         Grand Prize: National Instruments track
                       </div>
-                      <span>
-                        Energy Link: An Interactive Energy Management Platform
+                      <span><strong><i>
+                        Energy Link: An Interactive Energy Management Platform</i></strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
@@ -943,9 +973,9 @@ function Content() {
                         <AiFillCaretRight size={16} />
                         Winner: Young Intellectual category
                       </div>
-                      <span>
+                      <span><strong><i>
                         Dr Energy: a plug-and-play, multifunctional electrical
-                        power diagnostic platform
+                        power diagnostic platform</i></strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
@@ -977,6 +1007,17 @@ function Content() {
           </div>
         </div>
       </div>
+      <div className={styles.footerContainer} id="footer">
+        <div className={styles.footerContents}>
+        <div className={styles.footerLine1}>Let's talk about web development over coffee.</div>
+        <div className={styles.footerLine2}><span>CONTACT: 010 8028 6105</span><span>•</span><span>EMAIL: eutjin_72@hotmail.com</span></div>
+         
+        <div className={styles.footerLine3}>NAVIGATION</div>
+        <div className={styles.footerLine4}><span>About</span> <span>Resume/CV</span><span>Projects</span><span>Career</span><span>Education</span></div>
+          </div>
+          
+          
+          </div>
     </div>
   );
 }

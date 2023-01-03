@@ -797,7 +797,7 @@ gap: 0.5rem;
 }
 
 .footerContainer{
-  min-height: 20vh;
+  min-height: 10vh;
     background-color: rgb(58, 58, 58);
 }
 .footerContents{
@@ -816,25 +816,59 @@ gap: 0.5rem;
 }
 
 .footerLine1{
-  font-size: 1.6rem;
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 1rem;
+}
+
+.footerLine1 span{
+  margin-right: 2.5rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.footerLine1 div{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footerLine2{
+  display: flex;
+flex-wrap: wrap;
+}
+
+.footerLine2 span{
+  margin-right: 2.5rem;
+  font-weight: 300;
+}
+
+/* .footerLine1 span:nth-child(1){
   font-weight: 600;
-  margin-bottom: 2rem;
+} */
+
+/* .footerLine1{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
 }
 .footerLine2{
   font-size: 0.9rem;
   font-weight: 300;
   display: flex;
   gap: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid white;
-  margin-bottom: 1rem;
+
 }
 
 
 .footerLine3{
  font-weight: 600;
-  margin-bottom: 0.5rem;
-  
+  margin-bottom: 0.2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 .footerLine4{
   font-size: 0.9rem;
@@ -843,7 +877,8 @@ gap: 0.5rem;
   gap: 2rem;
  
   flex-wrap: wrap;
-}
+  
+} */
 .modalOverlay{
   background-color: black;
   height: 100%;
@@ -975,6 +1010,9 @@ object-fit: cover;
   }
   .eduBoxContent{
     padding: 2rem 1rem;
+  }
+  .footerLine1 span{
+    margin-right: 1rem;
   }
 }
 

@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 // import { useViewportScroll } from 'react-intersection-observer'
 import { useInView } from "react-intersection-observer";
 import styles from "./Content.module.css";
-import samplePDF from '../assets/resume221220.pdf';
+import samplePDF from "../assets/resume221220.pdf";
 import Hero from "./Hero";
 import {
   AiOutlineHome,
@@ -48,7 +48,7 @@ import photo2 from "../assets/peep2.png";
 import p1 from "../assets/proj1.png";
 import p2 from "../assets/proj2.png";
 
-function Content({setModal1, setModal2, setModal3}) {
+function Content({ setModal1, setModal2, setModal3 }) {
   const myRef = useRef();
   const myRef2 = useRef();
   const myRef3 = useRef();
@@ -59,8 +59,8 @@ function Content({setModal1, setModal2, setModal3}) {
   const { scrollYProgress } = useScroll();
   const [ref1, inView1] = useInView();
   const [ref2, inView2] = useInView();
-  const [inview1Pass, setInview1Pass]= useState(false)
-  const [inview2Pass, setInview2Pass]= useState(false)
+  const [inview1Pass, setInview1Pass] = useState(false);
+  const [inview2Pass, setInview2Pass] = useState(false);
   // const reportScroll = () => {
   //   console.log(window.scrollY);
   //   if (!myRef.current || !myRef2.current) return;
@@ -99,28 +99,26 @@ function Content({setModal1, setModal2, setModal3}) {
 
   useEffect(() => {
     console.log("inview", inView1);
-    if(!inview1Pass){
+    if (!inview1Pass) {
       if (inView1) {
         setCardOn(true);
-        setInview1Pass(true)
+        setInview1Pass(true);
       } else {
         setCardOn(false);
       }
-      
     }
-    
   }, [inView1]);
 
   useEffect(() => {
     console.log("inview2", inView2);
-    if(!inview2Pass){
-    if (inView2) {
-      setCardOn2(true);
-      setInview2Pass(true)
-    } else {
-      setCardOn2(false);
+    if (!inview2Pass) {
+      if (inView2) {
+        setCardOn2(true);
+        setInview2Pass(true);
+      } else {
+        setCardOn2(false);
+      }
     }
-  }
   }, [inView2]);
 
   // useEffect(() => {
@@ -187,13 +185,9 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
 
             <div className={styles.heroBtnGroup}>
-              <button
-                className={styles.heroMoreBtnTxt}
-                
-              >
-              <a href={samplePDF} target="_blank" 
-                    >
-                   Resume
+              <button className={styles.heroMoreBtnTxt}>
+                <a href={samplePDF} target="_blank">
+                  Resume
                 </a>
               </button>
               {/* <button
@@ -324,7 +318,6 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                
                 <div className={styles.techItemLine2}>
                   <SiGithub size={60} />
                 </div>
@@ -333,7 +326,6 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                
                 <div className={styles.techItemLine2}>
                   <SiAdobephotoshop size={60} />
                 </div>
@@ -342,7 +334,6 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                
                 <div className={styles.techItemLine2}>
                   <SiAdobelightroom size={60} />
                 </div>
@@ -351,7 +342,6 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-               
                 <div className={styles.techItemLine2}>
                   <SiSlack size={60} />
                 </div>
@@ -360,7 +350,6 @@ function Content({setModal1, setModal2, setModal3}) {
             </div>
             <div className={cardOn2 ? styles.techItem : styles.techItemOff}>
               <div className={styles.techItemContent}>
-                
                 <div className={styles.techItemLine2}>
                   <SiVisualstudiocode size={60} />
                 </div>
@@ -370,7 +359,7 @@ function Content({setModal1, setModal2, setModal3}) {
           </div>
         </div>
       </div>
-     
+
       <div className={styles.projectContainer}>
         <div className={styles.projectContents} id="projects">
           <div className={styles.projectText1}>Things I have built</div>
@@ -381,7 +370,12 @@ function Content({setModal1, setModal2, setModal3}) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+              }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: "250px" },
@@ -397,7 +391,8 @@ function Content({setModal1, setModal2, setModal3}) {
               transition={{
                 duration: 0.8,
                 type: "spring",
-                stiffness: 400, damping:25
+                stiffness: 400,
+                damping: 25,
               }}
               variants={{
                 visible: { opacity: 1, y: 0 },
@@ -440,7 +435,7 @@ function Content({setModal1, setModal2, setModal3}) {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button onClick={() => window.open("https://gunaesik.com")}>
+                <button onClick={() => setModal1(true)}>
                   <AiOutlineGlobal size={22} />
                   Live site
                 </button>
@@ -459,7 +454,6 @@ function Content({setModal1, setModal2, setModal3}) {
                     )
                   }
                 >
-                  
                   Documentation
                 </button>
               </div>
@@ -472,7 +466,12 @@ function Content({setModal1, setModal2, setModal3}) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring",stiffness: 400, damping:25 }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+              }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: "250px" },
@@ -488,12 +487,15 @@ function Content({setModal1, setModal2, setModal3}) {
               transition={{
                 duration: 0.8,
                 type: "spring",
-                stiffness: 400, damping:25
+                stiffness: 400,
+                damping: 25,
               }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: "250px" },
-              }} className={styles.projectBoxContent}>
+              }}
+              className={styles.projectBoxContent}
+            >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
                 <span>Enerlyzr.kr</span>
@@ -529,7 +531,7 @@ function Content({setModal1, setModal2, setModal3}) {
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
-                <button onClick={() => window.open("https://enerlyzr.com")}>
+                <button onClick={() => setModal2(true)}>
                   <AiOutlineGlobal size={22} />
                   Live site
                 </button>
@@ -548,7 +550,6 @@ function Content({setModal1, setModal2, setModal3}) {
                     )
                   }
                 >
-                  
                   Documentation
                 </button>
               </div>
@@ -561,7 +562,12 @@ function Content({setModal1, setModal2, setModal3}) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 400, damping:25 }}
+              transition={{
+                duration: 0.8,
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+              }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: "250px" },
@@ -577,12 +583,15 @@ function Content({setModal1, setModal2, setModal3}) {
               transition={{
                 duration: 0.8,
                 type: "spring",
-                stiffness: 400, damping:25
+                stiffness: 400,
+                damping: 25,
               }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: "250px" },
-              }} className={styles.projectBoxContent}>
+              }}
+              className={styles.projectBoxContent}
+            >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
                 <span>MoviReVue</span>
@@ -631,7 +640,6 @@ function Content({setModal1, setModal2, setModal3}) {
                     )
                   }
                 >
-                  
                   Documentation
                 </button>
               </div>
@@ -729,15 +737,17 @@ function Content({setModal1, setModal2, setModal3}) {
                     <div className={styles.timelineHeader}>
                       June, 2010 - June, 2014
                     </div>
-                    <div className={styles.timelineText1}>
-                      Research Intern
-                    </div>
+                    <div className={styles.timelineText1}>Research Intern</div>
                     <div className={styles.timelineText2}>
-                    Remotec Technology Ltd. (Hong Kong)</div>
+                      Remotec Technology Ltd. (Hong Kong)
+                    </div>
                     <div className={styles.timelineText3Custom}>
                       <span>
-                      Research project on control algorithm to enable intelligent operation of air conditioners with the aim to reduce energy consumption while maintaining user comfort levels.</span>
-                     
+                        Research project on control algorithm to enable
+                        intelligent operation of air conditioners with the aim
+                        to reduce energy consumption while maintaining user
+                        comfort levels.
+                      </span>
                     </div>
                     <motion.div
                       initial="hidden"
@@ -783,8 +793,10 @@ function Content({setModal1, setModal2, setModal3}) {
                     </div>
                     <div className={styles.timelineText3Custom}>
                       <span>
-                      Research project on EMS, which was successfully installed in a university building and energy savings were achieved. </span>
-                     
+                        Research project on EMS, which was successfully
+                        installed in a university building and energy savings
+                        were achieved.{" "}
+                      </span>
                     </div>
                     <motion.div
                       initial="hidden"
@@ -812,7 +824,7 @@ function Content({setModal1, setModal2, setModal3}) {
               <div className={styles.eduBoxHeader}>Education</div>
               <div className={styles.eduBoxInfo}>
                 <div className={styles.timelineContainer}>
-                <motion.div
+                  <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: false }}
@@ -824,7 +836,9 @@ function Content({setModal1, setModal2, setModal3}) {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: "-50px" },
-                    }} className={styles.timeline1}>
+                    }}
+                    className={styles.timeline1}
+                  >
                     <div className={styles.timelineHeader}>
                       June <strong>2014</strong> - June <strong>2017</strong>
                     </div>
@@ -904,7 +918,7 @@ function Content({setModal1, setModal2, setModal3}) {
                         </button>
                       </div>
                     </div>
-                    < motion.div
+                    <motion.div
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: false }}
@@ -917,7 +931,9 @@ function Content({setModal1, setModal2, setModal3}) {
                       variants={{
                         visible: { opacity: 1, y: 0 },
                         hidden: { opacity: 0, y: "200px" },
-                      }} className={styles.timelineBall}></motion.div>
+                      }}
+                      className={styles.timelineBall}
+                    ></motion.div>
                   </motion.div>
                   <motion.div
                     initial="hidden"
@@ -931,7 +947,9 @@ function Content({setModal1, setModal2, setModal3}) {
                     variants={{
                       visible: { opacity: 1, y: 0 },
                       hidden: { opacity: 0, y: "-50px" },
-                    }} className={styles.timeline1}>
+                    }}
+                    className={styles.timeline1}
+                  >
                     <div className={styles.timelineHeader}>
                       June <strong>2010</strong> - June <strong>2014</strong>
                     </div>
@@ -946,14 +964,19 @@ function Content({setModal1, setModal2, setModal3}) {
                       <span>
                         <strong>Awards: </strong>
                       </span>
-                      
+
                       <span> 1. Innovate Malaysia Design Competiton 2014</span>
                       <div className={styles.timelineTag}>
                         <AiFillCaretRight size={16} />
                         Grand Prize: National Instruments track
                       </div>
-                      <span><strong><i>
-                        Energy Link: An Interactive Energy Management Platform</i></strong>
+                      <span>
+                        <strong>
+                          <i>
+                            Energy Link: An Interactive Energy Management
+                            Platform
+                          </i>
+                        </strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
@@ -973,9 +996,13 @@ function Content({setModal1, setModal2, setModal3}) {
                         <AiFillCaretRight size={16} />
                         Winner: Young Intellectual category
                       </div>
-                      <span><strong><i>
-                        Dr Energy: a plug-and-play, multifunctional electrical
-                        power diagnostic platform</i></strong>
+                      <span>
+                        <strong>
+                          <i>
+                            Dr Energy: a plug-and-play, multifunctional
+                            electrical power diagnostic platform
+                          </i>
+                        </strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
@@ -986,7 +1013,7 @@ function Content({setModal1, setModal2, setModal3}) {
                         </button>
                       </div>
                     </div>
-                    < motion.div
+                    <motion.div
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: false }}
@@ -999,7 +1026,9 @@ function Content({setModal1, setModal2, setModal3}) {
                       variants={{
                         visible: { opacity: 1, y: 0 },
                         hidden: { opacity: 0, y: "200px" },
-                      }}className={styles.timelineBall}></motion.div>
+                      }}
+                      className={styles.timelineBall}
+                    ></motion.div>
                   </motion.div>
                 </div>
               </div>
@@ -1009,15 +1038,25 @@ function Content({setModal1, setModal2, setModal3}) {
       </div>
       <div className={styles.footerContainer} id="footer">
         <div className={styles.footerContents}>
-        <div className={styles.footerLine1}>Let's talk about web development over coffee.</div>
-        <div className={styles.footerLine2}><span>CONTACT: 010 8028 6105</span><span>•</span><span>EMAIL: eutjin_72@hotmail.com</span></div>
-         
-        <div className={styles.footerLine3}>NAVIGATION</div>
-        <div className={styles.footerLine4}><span>About</span> <span>Resume/CV</span><span>Projects</span><span>Career</span><span>Education</span></div>
+        <div className={styles.footerLine1}><div><span><strong>NAVIGATION</strong></span></div>
+          <div>
+            <span onClick={()=>window.location="#hero"}>About</span> <span ><a href={samplePDF} target="_blank">Resume/CV</a></span>
+            <span onClick={()=>window.location="#projects"}>Projects</span>
+            <span onClick={()=>window.location="#career"}>Career</span>
+            <span onClick={()=>window.location="#education"}>Education</span></div>
           </div>
-          
-          
+          {/* <div className={styles.footerLine1}>
+            Let's talk about web development over coffee.
+          </div> */}
+          <div className={styles.footerLine2}>
+            <span><strong>CONTACT :</strong> 010 8028 6105</span>
+            {/* <span>•</span> */}
+            <span><strong>EMAIL :</strong> eutjin_72@hotmail.com</span>
           </div>
+
+          
+        </div>
+      </div>
     </div>
   );
 }

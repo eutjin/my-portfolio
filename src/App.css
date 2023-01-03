@@ -69,8 +69,13 @@ padding: 1rem;
   display: flex;
   justify-content: center;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
+.menuContainerItem:hover{
+  color: #5fc4ff;
+  transform: translateY(-2px);
+}
 .modalOverlay{
   background-color: rgba(0, 0, 0, 0.656);
   height: 100%;

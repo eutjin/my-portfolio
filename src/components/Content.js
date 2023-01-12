@@ -47,6 +47,7 @@ import photo from "../assets/peep1.png";
 import photo2 from "../assets/peep2.png";
 import p1 from "../assets/proj1.png";
 import p2 from "../assets/proj2.png";
+import p3 from "../assets/proj3.png";
 
 function Content({ setModal1, setModal2, setModal3 }) {
   const myRef = useRef();
@@ -382,7 +383,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
               }}
               className={styles.projectBoxImg}
             >
-              <img src={p1} className={styles.projectImg} />
+              <img src={p3} className={styles.projectImg} />
             </motion.div>
             <motion.div
               initial="hidden"

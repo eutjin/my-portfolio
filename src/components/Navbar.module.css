@@ -47,6 +47,9 @@
 .navbarHamburger{
     display: none;
 }
+.navbarItem{
+    transition: 0.3s;
+}
 .navbarItem:hover{
     color: #5fc4ff;
     transform: translateY(-2px);

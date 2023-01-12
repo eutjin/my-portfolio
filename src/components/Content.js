@@ -197,7 +197,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                 See More
               </button> */}
               <button
-                className={styles.heroProjectBtn}
+                className={`${styles.heroMoreBtnTxt} ${styles.heroBtnColor}`}
                 onClick={() => (window.location = "#skills")}
               >
                 See More
@@ -672,7 +672,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                     className={styles.timeline1}
                   >
                     <div className={styles.timelineHeader}>
-                      May, 2018 - Present
+                      May <strong>2018</strong> - <strong>Present</strong>
                     </div>
                     <div className={styles.timelineText1}>
                       Technical Support Specialist, Quality team
@@ -688,15 +688,15 @@ function Content({ setModal1, setModal2, setModal3 }) {
                         both internal and external to the company.{" "}
                       </span>
                       <span>
-                        <AiFillCaretRight size={16} />
+                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
                         <strong>Technical Support (Chief Specialist)</strong>
                       </span>
                       <span>
-                        <AiFillCaretRight size={16} />
+                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
                         <strong>Quality Control and Assurance (QC/QA)</strong>
                       </span>
                       <span>
-                        <AiFillCaretRight size={16} />
+                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
                         <strong>
                           Product Sourcing and Production Management
                         </strong>
@@ -735,7 +735,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                     className={styles.timeline1}
                   >
                     <div className={styles.timelineHeader}>
-                      June, 2010 - June, 2014
+                      June <strong>2010</strong> - June <strong>2014</strong>
                     </div>
                     <div className={styles.timelineText1}>Research Intern</div>
                     <div className={styles.timelineText2}>
@@ -783,7 +783,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                     className={styles.timeline1}
                   >
                     <div className={styles.timelineHeader}>
-                      June, 2010 - June, 2014
+                      June <strong>2010</strong> - June <strong>2014</strong>
                     </div>
                     <div className={styles.timelineText1}>
                       Research Assistant
@@ -859,13 +859,13 @@ function Content({ setModal1, setModal2, setModal3 }) {
                         Minimizing Cost of Energy
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
+                        <button >
                           <AiOutlineGlobal size={18} />
-                          <a href="http://eprints.utar.edu.my/3156/">Link</a>
+                          <a target="_blank" rel="noopener noreferrer" href="http://eprints.utar.edu.my/3156/">Link</a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf">
+                          <a target="_blank" rel="noopener noreferrer" href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf">
                             PDF
                           </a>
                         </button>
@@ -878,20 +878,20 @@ function Content({ setModal1, setModal2, setModal3 }) {
                       </span>
                       <span>
                         {" "}
-                        1. Innovative Fuzzy Controller on Island Power Systems
-                        with Energy Storage and Renewable for Minimum Fuel
-                        Consumption
+                        1. Novel fuzzy-based control strategy for
+standalone power systems for minimum cost of
+electricity in rural areas
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a href="http://www.ijeetc.com/index.php?m=content&c=index&a=show&catid=180&id=1139">
+                          <a target="_blank" rel="noopener noreferrer" href="https://www.sciencedirect.com/science/article/abs/pii/S2213138817305568">
                             Link
                           </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf">
+                          <a target="_blank" rel="noopener noreferrer" href="https://sci-hub.se/https:/doi.org/10.1016/j.seta.2018.12.008">
                             PDF
                           </a>
                         </button>
@@ -906,13 +906,36 @@ function Content({ setModal1, setModal2, setModal3 }) {
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a href="https://ieeexplore.ieee.org/document/8278572">
+                          <a target="_blank" rel="noopener noreferrer" href="https://ieeexplore.ieee.org/document/8278572">
                             Link
                           </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf">
+                          <a target="_blank" rel="noopener noreferrer" href="https://sci-hub.se/10.1049/cp.2016.1268">
+                            PDF
+                          </a>
+                        </button>
+                      </div>
+                    </div>
+                    <div className={styles.timelineText3}>
+                      
+                      <span>
+                        {" "}
+                        3. Innovative Fuzzy Controller on Island Power Systems
+                        with Energy Storage and Renewable for Minimum Fuel
+                        Consumption
+                      </span>
+                      <div className={styles.timelineButtonGroup}>
+                        <button>
+                          <AiOutlineGlobal size={18} />
+                          <a target="_blank" rel="noopener noreferrer" href="http://www.ijeetc.com/index.php?m=content&c=index&a=show&catid=180&id=1139">
+                            Link
+                          </a>
+                        </button>
+                        <button>
+                          <AiOutlineFilePdf size={18} />
+                          <a target="_blank" rel="noopener noreferrer" href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf">
                             PDF
                           </a>
                         </button>
@@ -981,7 +1004,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a href="https://news.utar.edu.my/awards/2014/35/35.html">
+                          <a target="_blank" rel="noopener noreferrer" href="https://news.utar.edu.my/awards/2014/35/35.html">
                             Link
                           </a>
                         </button>
@@ -1007,7 +1030,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a href="https://dcc.utar.edu.my/news/awards/2013-10-07/dr-energy-makes-utar-a-tise-2013-winner/">
+                          <a target="_blank" rel="noopener noreferrer" href="https://dcc.utar.edu.my/news/awards/2013-10-07/dr-energy-makes-utar-a-tise-2013-winner/">
                             Link
                           </a>
                         </button>

@@ -49,7 +49,7 @@ import p1 from "../assets/proj1.png";
 import p2 from "../assets/proj2.png";
 import p3 from "../assets/proj3.png";
 
-function Content({ setModal1, setModal2, setModal3 }) {
+function Content({ setModal1, setModal2, setModal3, setModalResume }) {
   const myRef = useRef();
   const myRef2 = useRef();
   const myRef3 = useRef();
@@ -186,10 +186,11 @@ function Content({ setModal1, setModal2, setModal3 }) {
             </div>
 
             <div className={styles.heroBtnGroup}>
-              <button className={styles.heroMoreBtnTxt}>
-                <a href={samplePDF} target="_blank">
-                  Resume
-                </a>
+              <button
+                className={styles.heroMoreBtnTxt}
+                onClick={() => setModalResume(true)}
+              >
+                Resume
               </button>
               {/* <button
                 className={styles.heroMoreBtnTxt}
@@ -415,25 +416,32 @@ function Content({ setModal1, setModal2, setModal3 }) {
                 <span>
                   This full-stack project utlizes ReactJS on the front-end and
                   Express/NodeJS on the back-end. MongoDB is used to store data.
-                  The app utilizes Kakao Map API in order to enable geolocation
-                  of cafeteria location throughout the map.
+                  The app utilizes Kakao Map API in order to mark the locations
+                  of all cafeteria.
                 </span>
                 <span>
-                  Kakao login and Google login is used for user authentication.
+                  Kakao and Google login is used for user authentication.
                 </span>
               </div>
               <div className={styles.projectBoxTags}>
                 <span>ReactJS</span>
-                <span>NodeJS</span>
 
                 <span>Mantine UI</span>
                 <span>CSS Modules</span>
+                <span>NodeJS</span>
                 <span>Express</span>
                 <span>MongoDB</span>
+                <span>JWT</span>
+                <span>User Authentication + Authorization</span>
                 <span>Kakao Map API</span>
                 <span>Kakao Login</span>
                 <span>Google Login</span>
                 <span>Digital Ocean</span>
+
+                <span>Mongoose</span>
+                <span>Cloudinary</span>
+
+                <span>Full-Stack</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
                 <button onClick={() => setModal1(true)}>
@@ -451,7 +459,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://www.notion.so/GunaeSik-fc473e7319174e7eba4c0ef263d162cb"
+                      "https://eutjin.notion.site/GunaeSik-fc473e7319174e7eba4c0ef263d162cb"
                     )
                   }
                 >
@@ -507,10 +515,10 @@ function Content({ setModal1, setModal2, setModal3 }) {
                   consumption patterns in South Korea.{" "}
                 </span>
                 <span>
-                  Built using public date obatained from KEPCO API and Data.gov
-                  API. An Express backend server is used as a proxy server in
-                  order to bypass CORS policy restrictions that both of these
-                  APIs have{" "}
+                  Built using public API data obatained from KEPCO and Korea
+                  Power Exchange (KPX). An Express backend server is used as a
+                  proxy server in order to bypass CORS policy restrictions that
+                  both of these APIs have in place.
                 </span>
                 <span>
                   ChartJS library is used to visualize data in an easy and
@@ -520,15 +528,16 @@ function Content({ setModal1, setModal2, setModal3 }) {
               </div>
               <div className={styles.projectBoxTags}>
                 <span>ReactJS</span>
-                <span>NodeJS</span>
+
                 <span>ChartJS</span>
                 <span>Mantine UI</span>
                 <span>CSS Modules</span>
+                <span>NodeJS</span>
                 <span>Express</span>
                 <span>CORS</span>
                 <span>Proxy server</span>
-                <span>KEPCO API</span>
-                <span>Data.gov API</span>
+                <span>KEPCO Open API</span>
+                <span>KPX Open API</span>
                 <span>Digital Ocean</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
@@ -547,7 +556,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://www.notion.so/Enerlyzer-project-0affb238546440fdb4610fd31bf2fd48"
+                      "https://eutjin.notion.site/Enerlyzr-project-0affb238546440fdb4610fd31bf2fd48"
                     )
                   }
                 >
@@ -599,27 +608,33 @@ function Content({ setModal1, setModal2, setModal3 }) {
               </div>
               <div className={styles.projectBoxText1}>
                 <span>
-                  A web app for finding movies and building customized
-                  watchlists or movie lists. Watchlists can be shared with other
-                  users on the app. Users are able to leave movie reviews.
+                  An all-in-one web app for searching various movies and
+                  creating customized movie lists. Watchlists can be shared with
+                  other users and they are able to write reviews of watched
+                  movies.
                 </span>
                 <span>
-                  A backend Express server handles user authentication and
-                  authorization via JSON Web Tokens (JWT). User
+                  The project utilizes the YTS.MX Open API. A backend Express
+                  server handles user authentication and authorization via JSON
+                  Web Tokens (JWT). All user data is stored on backend via
+                  MongoDB.
                 </span>
               </div>
               <div className={styles.projectBoxTags}>
                 <span>ReactJS</span>
-                <span>NodeJS</span>
 
                 <span>Mantine UI</span>
                 <span>CSS Modules</span>
+                <span>NodeJS</span>
                 <span>Express</span>
                 <span>JWT</span>
-                <span>Proxy server</span>
-                <span>KEPCO API</span>
-                <span>Data.gov API</span>
+                <span>User Authentication + Authorization</span>
+                <span>YTS.MX Open API</span>
+                <span>MongoDB</span>
+                <span>Mongoose</span>
+                <span>Cloudinary</span>
                 <span>Digital Ocean</span>
+                <span>Full-Stack</span>
               </div>
               <div className={styles.projectBoxButtonGroup}>
                 <button onClick={() => setModal3(true)}>
@@ -637,7 +652,7 @@ function Content({ setModal1, setModal2, setModal3 }) {
                 <button
                   onClick={() =>
                     window.open(
-                      "https://www.notion.so/Movie-APP-55f9295af1c147e7ad53141d457f49e3"
+                      "https://eutjin.notion.site/MoviReVue-55f9295af1c147e7ad53141d457f49e3"
                     )
                   }
                 >
@@ -689,15 +704,24 @@ function Content({ setModal1, setModal2, setModal3 }) {
                         both internal and external to the company.{" "}
                       </span>
                       <span>
-                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
+                        <AiFillCaretRight
+                          className={styles.timelineText3Icon}
+                          size={16}
+                        />
                         <strong>Technical Support (Chief Specialist)</strong>
                       </span>
                       <span>
-                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
+                        <AiFillCaretRight
+                          className={styles.timelineText3Icon}
+                          size={16}
+                        />
                         <strong>Quality Control and Assurance (QC/QA)</strong>
                       </span>
                       <span>
-                        <AiFillCaretRight className={styles.timelineText3Icon} size={16} />
+                        <AiFillCaretRight
+                          className={styles.timelineText3Icon}
+                          size={16}
+                        />
                         <strong>
                           Product Sourcing and Production Management
                         </strong>
@@ -860,13 +884,23 @@ function Content({ setModal1, setModal2, setModal3 }) {
                         Minimizing Cost of Energy
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button >
+                        <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="http://eprints.utar.edu.my/3156/">Link</a>
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="http://eprints.utar.edu.my/3156/"
+                          >
+                            Link
+                          </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf"
+                          >
                             PDF
                           </a>
                         </button>
@@ -879,20 +913,28 @@ function Content({ setModal1, setModal2, setModal3 }) {
                       </span>
                       <span>
                         {" "}
-                        1. Novel fuzzy-based control strategy for
-standalone power systems for minimum cost of
-electricity in rural areas
+                        1. Novel fuzzy-based control strategy for standalone
+                        power systems for minimum cost of electricity in rural
+                        areas
                       </span>
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://www.sciencedirect.com/science/article/abs/pii/S2213138817305568">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://www.sciencedirect.com/science/article/abs/pii/S2213138817305568"
+                          >
                             Link
                           </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://sci-hub.se/https:/doi.org/10.1016/j.seta.2018.12.008">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://sci-hub.se/https:/doi.org/10.1016/j.seta.2018.12.008"
+                          >
                             PDF
                           </a>
                         </button>
@@ -907,20 +949,27 @@ electricity in rural areas
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://ieeexplore.ieee.org/document/8278572">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://ieeexplore.ieee.org/document/8278572"
+                          >
                             Link
                           </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://sci-hub.se/10.1049/cp.2016.1268">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://sci-hub.se/10.1049/cp.2016.1268"
+                          >
                             PDF
                           </a>
                         </button>
                       </div>
                     </div>
                     <div className={styles.timelineText3}>
-                      
                       <span>
                         {" "}
                         3. Innovative Fuzzy Controller on Island Power Systems
@@ -930,13 +979,21 @@ electricity in rural areas
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="http://www.ijeetc.com/index.php?m=content&c=index&a=show&catid=180&id=1139">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="http://www.ijeetc.com/index.php?m=content&c=index&a=show&catid=180&id=1139"
+                          >
                             Link
                           </a>
                         </button>
                         <button>
                           <AiOutlineFilePdf size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf"
+                          >
                             PDF
                           </a>
                         </button>
@@ -1005,7 +1062,11 @@ electricity in rural areas
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://news.utar.edu.my/awards/2014/35/35.html">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://news.utar.edu.my/awards/2014/35/35.html"
+                          >
                             Link
                           </a>
                         </button>
@@ -1031,7 +1092,11 @@ electricity in rural areas
                       <div className={styles.timelineButtonGroup}>
                         <button>
                           <AiOutlineGlobal size={18} />
-                          <a target="_blank" rel="noopener noreferrer" href="https://dcc.utar.edu.my/news/awards/2013-10-07/dr-energy-makes-utar-a-tise-2013-winner/">
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://dcc.utar.edu.my/news/awards/2013-10-07/dr-energy-makes-utar-a-tise-2013-winner/"
+                          >
                             Link
                           </a>
                         </button>
@@ -1062,23 +1127,40 @@ electricity in rural areas
       </div>
       <div className={styles.footerContainer} id="footer">
         <div className={styles.footerContents}>
-        <div className={styles.footerLine1}><div><span><strong>NAVIGATION</strong></span></div>
-          <div>
-            <span onClick={()=>window.location="#hero"}>About</span> <span ><a href={samplePDF} target="_blank">Resume/CV</a></span>
-            <span onClick={()=>window.location="#projects"}>Projects</span>
-            <span onClick={()=>window.location="#career"}>Career</span>
-            <span onClick={()=>window.location="#education"}>Education</span></div>
+          <div className={styles.footerLine1}>
+            <div>
+              <span>
+                <strong>NAVIGATION</strong>
+              </span>
+            </div>
+            <div>
+              <span onClick={() => (window.location = "#hero")}>About</span>{" "}
+              <span>
+                <a href={samplePDF} target="_blank">
+                  Resume/CV
+                </a>
+              </span>
+              <span onClick={() => (window.location = "#projects")}>
+                Projects
+              </span>
+              <span onClick={() => (window.location = "#career")}>Career</span>
+              <span onClick={() => (window.location = "#education")}>
+                Education
+              </span>
+            </div>
           </div>
           {/* <div className={styles.footerLine1}>
             Let's talk about web development over coffee.
           </div> */}
           <div className={styles.footerLine2}>
-            <span><strong>CONTACT :</strong> 010 8028 6105</span>
+            <span>
+              <strong>CONTACT :</strong> 010 8028 6105
+            </span>
             {/* <span>•</span> */}
-            <span><strong>EMAIL :</strong> eutjin_72@hotmail.com</span>
+            <span>
+              <strong>EMAIL :</strong> eutjin_72@hotmail.com
+            </span>
           </div>
-
-          
         </div>
       </div>
     </div>

@@ -20,12 +20,14 @@ import {
 import qr1 from "./assets/qr1.png";
 import qr2 from "./assets/qr2.png";
 import qr3 from "./assets/qr3.png";
+import samplePDF from "./assets/resume221220.pdf";
 
 function App() {
   const [menu, setMenu] = useState(false);
   const [modal1, setModal1] = useState(false);
   const [modal2, setModal2] = useState(false);
   const [modal3, setModal3] = useState(false);
+  const [modalResume, setModalResume] = useState(false);
 
   const handleClickOverlay = (e) => {
     if (e.target.id == "menuOverlay") {
@@ -36,10 +38,12 @@ function App() {
   const handleClickModalOverlay = (e) => {
     if (e.target.id == "overlay1") {
       setModal1(false);
-    }else if (e.target.id == "overlay2") {
+    } else if (e.target.id == "overlay2") {
       setModal2(false);
-    }else if (e.target.id == "overlay3") {
+    } else if (e.target.id == "overlay3") {
       setModal3(false);
+    } else if (e.target.id == "overlay4") {
+      setModalResume(false);
     }
   };
   return (
@@ -132,8 +136,9 @@ function App() {
         setModal1={setModal1}
         setModal2={setModal2}
         setModal3={setModal3}
+        setModalResume={setModalResume}
       />
-      
+
       {modal1 && (
         <div
           className="modalOverlay"
@@ -161,17 +166,24 @@ function App() {
                   To proceed and view the live project in the current device,
                   click the button below:
                 </div>
-                <button className="liveSiteBtn"  onClick={() =>
-                    window.open("https://gunaesik.com")
-                  }>Go to live project</button>
+                <button
+                  className="liveSiteBtn"
+                  onClick={() => window.open("https://gunaesik.com")}
+                >
+                  Go to live project
+                </button>
                 <div className="accountPwContainer">
                   <span>Test Account</span>
                   <span>
                     The following is a test account for testing purposes. You
                     may login using the following credentials:
                   </span>
-                  <span>Username: hassan@hassan.com</span>
-                  <span>Password: hassan</span>
+                  <span>
+                    Username: <strong>hassan@hassan.com</strong>
+                  </span>
+                  <span>
+                    <strong>Password: hassan</strong>
+                  </span>
                 </div>
               </div>
             </div>
@@ -205,9 +217,12 @@ function App() {
                   To proceed and view the live project in the current device,
                   click the button below:
                 </div>
-                <button className="liveSiteBtn"  onClick={() =>
-                    window.open("https://enerlyzr.com")
-                  }>Go to live project</button>
+                <button
+                  className="liveSiteBtn"
+                  onClick={() => window.open("https://enerlyzr.com")}
+                >
+                  Go to live project
+                </button>
                 {/* <div className="accountPwContainer">
                   <span>Test Account</span>
                   <span>
@@ -249,19 +264,53 @@ function App() {
                   To proceed and view the live project in the current device,
                   click the button below:
                 </div>
-                <button className="liveSiteBtn"  onClick={() =>
-                    window.open("https://movirevue.com")
-                  }>Go to live project</button>
+                <button
+                  className="liveSiteBtn"
+                  onClick={() => window.open("https://movirevue.com")}
+                >
+                  Go to live project
+                </button>
                 <div className="accountPwContainer">
                   <span>Test Account</span>
                   <span>
                     The following is a test account for testing purposes. You
                     may login using the following credentials:
                   </span>
-                  <span>Username: hassan@hassan.com</span>
-                  <span>Password: hassan</span>
+                  <span>
+                    {" "}
+                    <strong>Username: test@movirevue.com</strong>
+                  </span>
+                  <span>
+                    {" "}
+                    <strong>Password: movirevue8888</strong>
+                  </span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+      {modalResume && (
+        <div
+          className="modalOverlay"
+          id="overlay4"
+          onClick={(e) => handleClickModalOverlay(e)}
+        >
+          <div className="modalContainer2">
+            <div className="modalText1">
+              <span>Resume</span>
+              <span onClick={() => setModalResume(false)}>
+                <AiOutlineClose size={20} />
+              </span>
+            </div>
+            <div className="modalContent3">
+              <a href={samplePDF} target="_blank">
+                <button className="resumeOptionBtn">Korean Resume</button>
+              </a>
+
+              <a href={samplePDF} target="_blank">
+                <button className="resumeOptionBtn">English Resume</button>
+              </a>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styles from "./Content.module.css";
 import samplePDF from "../assets/resume221220.pdf";
+
 import Hero from "./Hero";
 import {
   AiOutlineHome,
@@ -23,7 +24,7 @@ import {
   AiOutlineTool,
   AiOutlineMenu,
   AiOutlineFilePdf,
-  AiFillCaretRight,
+  AiFillCaretRight,AiOutlinePlayCircle, AiFillPlayCircle, 
 } from "react-icons/ai";
 import {
   SiHtml5,
@@ -404,7 +405,13 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
             >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
-                <span>GunaeSik</span>
+                <span>GunaeSik 
+                <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://drive.google.com/file/d/1qMssawMgeJHPU6QeyRBu6gBYvdzfAGkR/view?usp=share_link"
+                          >
+                  <div className={styles.demoPlay}><AiFillCaretRight size={20}/>Demo</div></a></span>
               </div>
               <div className={styles.projectBoxText1}>
                 <span>
@@ -507,7 +514,12 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
             >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
-                <span>Enerlyzr.kr</span>
+                <span>Enerlyzr.kr<a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://drive.google.com/file/d/1ljnMH5eryTLm2ifKQNiBwezGhbjXJXti/view?usp=share_link"
+                          >
+                  <div className={styles.demoPlay}><AiFillCaretRight size={20}/>Demo</div></a></span>
               </div>
               <div className={styles.projectBoxText1}>
                 <span>
@@ -604,7 +616,12 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
             >
               <div className={styles.projectBoxHeader}>
                 <span>Featured Project</span>
-                <span>MoviReVue</span>
+                <span>MoviReVue<a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://drive.google.com/file/d/13EifeGxaiZ9EcGmf_bFtuZUZ8mp5z9v0/view?usp=share_link"
+                          >
+                  <div className={styles.demoPlay}><AiFillCaretRight size={20}/>Demo</div></a></span>
               </div>
               <div className={styles.projectBoxText1}>
                 <span>
@@ -884,26 +901,29 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         Minimizing Cost of Energy
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                        
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="http://eprints.utar.edu.my/3156/"
                           >
-                            Link
-                          </a>
-                        </button>
                         <button>
-                          <AiOutlineFilePdf size={18} />
-                          <a
+                          <AiOutlineGlobal size={18} />
+                          
+                            Link
+                          
+                        </button></a>
+                        <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf"
                           >
+                        <button>
+                          <AiOutlineFilePdf size={18} />
+                          
                             PDF
-                          </a>
-                        </button>
+                          
+                        </button></a>
                       </div>
                     </div>
                     <div className={styles.horizontalDivider}></div>
@@ -918,26 +938,27 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         areas
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://www.sciencedirect.com/science/article/abs/pii/S2213138817305568"
                           >
-                            Link
-                          </a>
-                        </button>
                         <button>
-                          <AiOutlineFilePdf size={18} />
-                          <a
+                          <AiOutlineGlobal size={18} />
+                          
+                            Link
+                          
+                        </button></a>
+                        <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="https://sci-hub.se/https:/doi.org/10.1016/j.seta.2018.12.008"
-                          >
+                            href="https://drive.google.com/file/d/1slEVjhPKpD_zM71OW4jjX5E_0Erv21cj/view?usp=share_link"
+                          ><button>
+                          <AiOutlineFilePdf size={18} />
+                          
                             PDF
-                          </a>
-                        </button>
+                          
+                        </button></a>
                       </div>
                     </div>
                     <div className={styles.timelineText3}>
@@ -947,26 +968,29 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         Standalone Power Systems
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://ieeexplore.ieee.org/document/8278572"
                           >
-                            Link
-                          </a>
-                        </button>
                         <button>
-                          <AiOutlineFilePdf size={18} />
-                          <a
+                          <AiOutlineGlobal size={18} />
+                          
+                            Link
+                          
+                        </button></a>
+                        
+                        <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="https://sci-hub.se/10.1049/cp.2016.1268"
+                            href="https://drive.google.com/file/d/1pX7AmdI3JcQ0Euvk-XVKBjpzcML-Am1K/view?usp=share_link"
                           >
+                        <button>
+                          <AiOutlineFilePdf size={18} />
+                          
                             PDF
-                          </a>
-                        </button>
+                        
+                        </button>  </a>
                       </div>
                     </div>
                     <div className={styles.timelineText3}>
@@ -977,26 +1001,28 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         Consumption
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="http://www.ijeetc.com/index.php?m=content&c=index&a=show&catid=180&id=1139"
                           >
-                            Link
-                          </a>
-                        </button>
                         <button>
-                          <AiOutlineFilePdf size={18} />
-                          <a
+                          <AiOutlineGlobal size={18} />
+                          
+                            Link
+                          
+                        </button></a>
+                        <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="http://www.ijeetc.com/uploadfile/2018/0612/20180612065724454.pdf"
+                            href="https://drive.google.com/file/d/1Fyf3quS2cunvXmFT-Jvhh4jQjH-OurRr/view?usp=share_link"
                           >
+                        <button>
+                          <AiOutlineFilePdf size={18} />
+                         
                             PDF
-                          </a>
-                        </button>
+                          
+                        </button></a>
                       </div>
                     </div>
                     <motion.div
@@ -1060,16 +1086,17 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         </strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://news.utar.edu.my/awards/2014/35/35.html"
                           >
+                        <button>
+                          <AiOutlineGlobal size={18} />
+                         
                             Link
-                          </a>
-                        </button>
+                          
+                        </button></a>
                       </div>
                     </div>
                     <div className={styles.timelineText3}>
@@ -1090,16 +1117,16 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         </strong>
                       </span>
                       <div className={styles.timelineButtonGroup}>
-                        <button>
-                          <AiOutlineGlobal size={18} />
-                          <a
+                      <a
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://dcc.utar.edu.my/news/awards/2013-10-07/dr-energy-makes-utar-a-tise-2013-winner/"
-                          >
+                          ><button>
+                          <AiOutlineGlobal size={18} />
+                          
                             Link
-                          </a>
-                        </button>
+                          
+                        </button></a>
                       </div>
                     </div>
                     <motion.div
@@ -1135,10 +1162,10 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
             </div>
             <div>
               <span onClick={() => (window.location = "#hero")}>About</span>{" "}
-              <span>
-                <a href={samplePDF} target="_blank">
+              <span onClick={()=>setModalResume(true)}>
+                
                   Resume/CV
-                </a>
+                
               </span>
               <span onClick={() => (window.location = "#projects")}>
                 Projects

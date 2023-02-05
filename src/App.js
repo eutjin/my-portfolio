@@ -21,6 +21,8 @@ import qr1 from "./assets/qr1.png";
 import qr2 from "./assets/qr2.png";
 import qr3 from "./assets/qr3.png";
 import samplePDF from "./assets/resume221220.pdf";
+import resumeKOR from "./assets/RESUME_KOR.pdf";
+import resumeENG from "./assets/RESUME_ENG.pdf";
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -176,13 +178,13 @@ function App() {
                   <span>Test Account</span>
                   <span>
                     The following is a test account for testing purposes. You
-                    may login using the following credentials:
+                    may create a new account or login using the following credentials:
                   </span>
                   <span>
-                    Username: <strong>hassan@hassan.com</strong>
+                  <strong>Username: test@gunaesik.com</strong>
                   </span>
                   <span>
-                    <strong>Password: hassan</strong>
+                    <strong>Password: gunaesik8888</strong>
                   </span>
                 </div>
               </div>
@@ -274,7 +276,7 @@ function App() {
                   <span>Test Account</span>
                   <span>
                     The following is a test account for testing purposes. You
-                    may login using the following credentials:
+                    may create a new account or login using the following credentials:
                   </span>
                   <span>
                     {" "}
@@ -304,11 +306,11 @@ function App() {
               </span>
             </div>
             <div className="modalContent3">
-              <a href={samplePDF} target="_blank">
+              <a href={resumeKOR} target="_blank">
                 <button className="resumeOptionBtn">Korean Resume</button>
               </a>
 
-              <a href={samplePDF} target="_blank">
+              <a href={resumeENG} target="_blank">
                 <button className="resumeOptionBtn">English Resume</button>
               </a>
             </div>

@@ -181,7 +181,13 @@ function App() {
                     may create a new account or login using the following credentials:
                   </span>
                   <span>
-                  <strong>Username: test@gunaesik.com</strong>
+                  <strong>USER ID: user@gunaesik.com</strong>
+                  </span>
+                  <span>
+                    <strong>Password: gunaesik8888</strong>
+                  </span>
+                  <span>
+                  <strong>VENDOR ID: vendor@gunaesik.com</strong>
                   </span>
                   <span>
                     <strong>Password: gunaesik8888</strong>
@@ -280,7 +286,7 @@ function App() {
                   </span>
                   <span>
                     {" "}
-                    <strong>Username: test@movirevue.com</strong>
+                    <strong>ID: test@movirevue.com</strong>
                   </span>
                   <span>
                     {" "}

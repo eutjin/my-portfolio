@@ -260,6 +260,15 @@ border-radius: 0.5rem;
 .accountPwContainer span:nth-of-type(4) {
   font-size: 0.9rem;
   color: rgb(107, 107, 107);
+  margin-bottom: 1rem;
+}
+.accountPwContainer span:nth-of-type(5) {
+  font-size: 0.9rem;
+  color: rgb(107, 107, 107);
+}
+.accountPwContainer span:nth-of-type(6) {
+  font-size: 0.9rem;
+  color: rgb(107, 107, 107);
 }
 
 @media (max-width: 800px){

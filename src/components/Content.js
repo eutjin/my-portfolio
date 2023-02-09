@@ -457,7 +457,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                 </button>
                 <button
                   onClick={() =>
-                    window.open("https://github.com/eutjin/kakao-map")
+                    window.open("https://github.com/eutjin/Eat-app")
                   }
                 >
                   <AiOutlineGithub size={22} />
@@ -916,7 +916,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
                         <a
                             target="_blank"
                             rel="noopener noreferrer"
-                            href="http://eprints.utar.edu.my/3156/1/ESA-2017_-1406555-1.pdf"
+                            href="https://drive.google.com/file/d/1OY-TcXUJulaFKB7EaemIgnZEhCy2ZoU2/view"
                           >
                         <button>
                           <AiOutlineFilePdf size={18} />

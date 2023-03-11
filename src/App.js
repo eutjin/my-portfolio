@@ -23,6 +23,10 @@ import qr3 from "./assets/qr3.png";
 import samplePDF from "./assets/resume221220.pdf";
 import resumeKOR from "./assets/RESUME_KOR.pdf";
 import resumeENG from "./assets/RESUME_ENG.pdf";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-Z1VNWHJK36");
+
 
 function App() {
   const [menu, setMenu] = useState(false);
@@ -30,6 +34,11 @@ function App() {
   const [modal2, setModal2] = useState(false);
   const [modal3, setModal3] = useState(false);
   const [modalResume, setModalResume] = useState(false);
+
+  useEffect(()=>{
+    ReactGA.send({ hitType: "pageview_main", page: "/", title: "Main Title" });
+
+  }, [])
 
   const handleClickOverlay = (e) => {
     if (e.target.id == "menuOverlay") {

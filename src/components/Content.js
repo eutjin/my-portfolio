@@ -49,6 +49,8 @@ import photo2 from "../assets/peep2.png";
 import p1 from "../assets/proj1.png";
 import p2 from "../assets/proj2.png";
 import p3 from "../assets/proj3.png";
+import ReactGA from "react-ga4";
+
 
 function Content({ setModal1, setModal2, setModal3, setModalResume }) {
   const myRef = useRef();
@@ -145,6 +147,18 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
   //   observer.observe(myRef3.current);
   // }, []);
 
+  const handleResumeButtonClick=()=>{
+    setModalResume(true)
+    ReactGA.event({
+      category: "resume button category",
+      action: "resume button action",
+      label: "resume button label", // optional
+      // value: 99, // optional, must be a number
+      // nonInteraction: true, // optional, true/false
+      // transport: "xhr", // optional, beacon/xhr/image
+    });
+  }
+
   return (
     <div className={styles.contentContainer}>
       {/* <Hero/> */}
@@ -189,7 +203,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
             <div className={styles.heroBtnGroup}>
               <button
                 className={styles.heroMoreBtnTxt}
-                onClick={() => setModalResume(true)}
+                onClick={() => handleResumeButtonClick()}
               >
                 Resume
               </button>

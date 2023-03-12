@@ -908,6 +908,22 @@ flex-wrap: wrap;
   height: 100%;
 }
 
+.individualProjectContainer{
+  height: 100%;
+    margin: 0 auto;
+    max-width: var(--content-width);
+    padding: 2rem 1rem;
+}
+
+.individualContainerMain{
+  background-color: #838383;
+ min-height: 100vh;
+  position: absolute;
+  
+  width: 100%;
+
+}
+
 @media (max-width: 1000px){
   .heroText1 {
     font-size: 1.5rem;

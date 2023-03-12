@@ -855,7 +855,7 @@ flex-wrap: wrap;
 }
 
 .demoPlay{
-  background-color: rgb(77, 77, 77);
+  background-color: rgb(255, 160, 160);
   font-size: 1rem;
  display: flex;
  gap: 0.7rem;

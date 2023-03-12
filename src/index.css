@@ -34,3 +34,7 @@ html {
 button{
   cursor: pointer;
 }
+
+:target {
+  scroll-margin-top: 70px;
+}

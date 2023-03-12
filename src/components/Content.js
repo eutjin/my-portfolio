@@ -382,7 +382,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
           <div className={styles.projectText1}>Things I have built</div>
 
           {/* proj1 */}
-          <div className={styles.projectBox}>
+          <div className={styles.projectBox} id="gunaesik">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -491,7 +491,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
           </div>
 
           {/* proj1 */}
-          <div className={styles.projectBox}>
+          <div className={styles.projectBox} id="enerlyzr">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -593,7 +593,7 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
           </div>
 
           {/* proj2 */}
-          <div className={styles.projectBox}>
+          <div className={styles.projectBox} id="movirevue">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -695,10 +695,10 @@ function Content({ setModal1, setModal2, setModal3, setModalResume }) {
         </div>
       </div>
 
-      <div className={styles.eduContainer} id="career">
+      <div className={styles.eduContainer} >
         <div className={styles.eduContents}>
           {/* career */}
-          <div className={styles.eduBox}>
+          <div className={styles.eduBox} id="career">
             <div className={styles.eduBoxContent}>
               <div className={styles.eduBoxHeader}>Career</div>
               <div className={styles.eduBoxInfo}>
